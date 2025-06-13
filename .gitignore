@@ -1,0 +1,36 @@
+# WordPress core
+/wp-admin/
+/wp-includes/
+index.php
+license.txt
+readme.html
+wp-*.php
+xmlrpc.php
+.htaccess
+
+# Local environment files
+*.sql
+*.sqlite
+*.log
+*.env
+.env.*
+local-xdebuginfo.php
+
+# OS/editor/system stuff
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+vendor/
+
+# Ignore media uploads
+wp-content/uploads/
+
+# Ignore all other themes
+wp-content/themes/*
+!wp-content/themes/planets/
+
+# Ignore all plugins
+wp-content/plugins/*
+!wp-content/plugins/planets-core/
