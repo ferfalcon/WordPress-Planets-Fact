@@ -1,9 +1,7 @@
 <?php
 /**
  * planets functions and definitions
- *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
  * @package planets
  */
 
@@ -138,8 +136,17 @@ add_action( 'widgets_init', 'planets_widgets_init' );
  * Enqueue scripts and styles.
  */
 function planets_scripts() {
+  // Main theme stylesheet
 	wp_enqueue_style( 'planets-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'planets-style', 'rtl', 'replace' );
+
+  // Google Fonts
+  wp_enqueue_style(
+    'planets-fonts',
+    'https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=League+Spartan:wght@400;700&display=swap',
+    [],
+    null
+  );
 
 	wp_enqueue_script( 'planets-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
