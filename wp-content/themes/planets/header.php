@@ -9,32 +9,24 @@
 
   <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+
     <div id="page" class="site">
       <a class="skip-link screen-reader-text" href="#primary">
         <?php esc_html_e('Skip to content', 'planets'); ?>
       </a>
 
       <header id="masthead" class="site-header">
-        <?php
-          the_custom_logo();
-          if (is_front_page() && is_home()) :
-        ?>
+        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+          <?php the_custom_logo(); ?>
+          <?php bloginfo('name'); ?>
+        </a>
 
-          <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-            <?php bloginfo('name'); ?>
-          </a>
-
-        <?php
-          endif;
+        <?php 
           $planets_description = get_bloginfo('description', 'display');
-          if ($planets_description || is_customize_preview()) :
+          if ($planets_description || is_customize_preview()) : 
         ?>
-
           <p class="site-description">
-            <?php 
-              // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-              echo $planets_description; 
-            ?>
+            <?php echo esc_html($planets_description); ?>
           </p>
         <?php endif; ?>
 
