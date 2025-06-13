@@ -14,7 +14,7 @@
       <div class="planet-text">
         <?php echo wp_kses_post(get_field('overview_text')); ?>
 
-        <?php if ($url = get_field('overview_wikipedia_url')) : ?>
+        <?php if ($url = get_field('overview_wikipedia_source')) : ?>
           <p>
             <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer">Source: Wikipedia</a>
           </p>
@@ -38,7 +38,7 @@
       <div class="planet-text">
         <?php echo wp_kses_post(get_field('structure_text')); ?>
 
-        <?php if ($url = get_field('structure_wikipedia_url')) : ?>
+        <?php if ($url = get_field('structure_wikipedia_source')) : ?>
           <p>
             <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer">Source: Wikipedia</a>
           </p>
@@ -62,7 +62,7 @@
       <div class="planet-text">
         <?php echo wp_kses_post(get_field('geology_text')); ?>
 
-        <?php if ($url = get_field('geology_wikipedia_url')) : ?>
+        <?php if ($url = get_field('geology_wikipedia_source')) : ?>
           <p>
             <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer">Source: Wikipedia</a>
           </p>
