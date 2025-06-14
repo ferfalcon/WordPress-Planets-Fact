@@ -1,0 +1,22 @@
+.front-page-main {
+  padding: 2rem 0;
+}
+
+.front-page-main__planets {
+  display: grid;
+  gap: 4rem;
+  padding: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.planet-card {
+  h2 {
+    margin: 0;
+  }
+}
+
+.planet-card a {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
