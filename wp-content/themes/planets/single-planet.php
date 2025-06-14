@@ -19,7 +19,7 @@
     </ul>
   </nav>
 
-  <section class="planet-section" style="display: none;">
+  <section class="planet-section">
     <div class="planet-content">
       <div class="planet-text">
         <?php echo wp_kses_post(get_field('overview_text')); ?>
@@ -41,7 +41,7 @@
     </div>
   </section>
 
-  <section class="planet-section" style="display: none;">
+  <section class="planet-section">
     <div class="planet-content">
       <div class="planet-text">
         <?php echo wp_kses_post(get_field('structure_text')); ?>
@@ -63,7 +63,7 @@
     </div>
   </section>
 
-  <section class="planet-section" style="display: none;">
+  <section class="planet-section">
     <div class="planet-content">
       <div class="planet-text">
         <?php echo wp_kses_post(get_field('geology_text')); ?>
@@ -89,19 +89,19 @@
   <section class="planet-metrics">
     <h2 style="display: none;">Physical Data</h2>
     <dl>
-      <div>
+      <div role="group">
         <dt class="desc-term">Rotation Time</dt>
         <dd class="desc-details"><?php echo esc_html(get_field('rotation_time')); ?></dd>
       </div>
-      <div>
+      <div role="group">
         <dt class="desc-term">Revolution Time</dt>
         <dd class="desc-details"><?php echo esc_html(get_field('revolution_time')); ?></dd>
       </div>
-      <div>
+      <div role="group">
         <dt class="desc-term">Radius</dt>
         <dd class="desc-details"><?php echo esc_html(get_field('radius')); ?></dd>
       </div>
-      <div>
+      <div role="group">
         <dt class="desc-term">Average Temp.</dt>
         <dd class="desc-details"><?php echo esc_html(get_field('temperature')); ?></dd>
       </div>

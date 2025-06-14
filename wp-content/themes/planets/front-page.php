@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-<main class="planet-list">
-  <h1><?php bloginfo('name'); ?></h1>
+<main class="front-page-main">
+  <h1 class="sr-only"><?php bloginfo('name'); ?></h1>
 
-  <section class="planet-grid">
+  <section class="front-page-main__planets">
     <?php
       $planets = new WP_Query([
         'post_type' => 'planet',
@@ -12,7 +12,7 @@
         'order' => 'ASC'
       ]);
 
-      if ($planets->have_posts()) :
+      if ($planets->have_posts()) : 
         while ($planets->have_posts()) : $planets->the_post();
     ?>
 
@@ -22,7 +22,7 @@
         <h2><?php the_title(); ?></h2>
       </a>
     </article>
-  
+
     <?php endwhile; wp_reset_postdata(); endif; ?>
   </section>
 </main>
