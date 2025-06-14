@@ -148,6 +148,22 @@ function planets_scripts() {
     null
   );
 
+  // Main navigation
+  wp_enqueue_style(
+    'planets-main-navigation',
+    get_template_directory_uri() . '/assets/css/navigation.css',
+    [],
+    null
+  );
+
+  // Planet Metrics
+  wp_enqueue_style(
+    'planets-metrics',
+    get_template_directory_uri() . '/assets/css/planets-metrics.css',
+    [],
+    null
+  );
+
   // Google Fonts stylesheet
   wp_enqueue_style(
     'planets-fonts',

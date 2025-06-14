@@ -1,19 +1,28 @@
 <?php get_header(); ?>
 
 <main id="primary" class="site-main planet-page">
-  <?php
-    if (have_posts()) :
-      while (have_posts()) : the_post();
-  ?>
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
   <h1><?php the_title(); ?></h1>
 
-  <section class="planet-section">
-    <h2>Overview</h2>
+  <nav class="page-navigation">
+    <ul>
+      <li>
+        <button>Overview</button>
+      </li>
+      <li>
+        <button>Structure</button>
+      </li>
+      <li>
+        <button>Surface</button>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="planet-section" style="display: none;">
     <div class="planet-content">
       <div class="planet-text">
         <?php echo wp_kses_post(get_field('overview_text')); ?>
-
         <?php if ($url = get_field('overview_wikipedia_source')) : ?>
           <p>
             <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer">Source: Wikipedia</a>
@@ -32,12 +41,10 @@
     </div>
   </section>
 
-  <section class="planet-section">
-    <h2>Structure</h2>
+  <section class="planet-section" style="display: none;">
     <div class="planet-content">
       <div class="planet-text">
         <?php echo wp_kses_post(get_field('structure_text')); ?>
-
         <?php if ($url = get_field('structure_wikipedia_source')) : ?>
           <p>
             <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer">Source: Wikipedia</a>
@@ -56,8 +63,7 @@
     </div>
   </section>
 
-  <section class="planet-section">
-    <h2>Geology</h2>
+  <section class="planet-section" style="display: none;">
     <div class="planet-content">
       <div class="planet-text">
         <?php echo wp_kses_post(get_field('geology_text')); ?>
@@ -81,21 +87,25 @@
   </section>
 
   <section class="planet-metrics">
-    <h2>Physical Data</h2>
-    <ul>
-      <li>
-        <strong>Rotation Time:</strong> <?php echo esc_html(get_field('rotation_time')); ?>
-      </li>
-      <li>
-        <strong>Revolution Time:</strong> <?php echo esc_html(get_field('revolution_time')); ?>
-      </li>
-      <li>
-        <strong>Radius:</strong> <?php echo esc_html(get_field('radius')); ?>
-      </li>
-      <li>
-        <strong>Temperature:</strong> <?php echo esc_html(get_field('temperature')); ?>
-      </li>
-    </ul>
+    <h2 style="display: none;">Physical Data</h2>
+    <dl>
+      <div>
+        <dt class="desc-term">Rotation Time</dt>
+        <dd class="desc-details"><?php echo esc_html(get_field('rotation_time')); ?></dd>
+      </div>
+      <div>
+        <dt class="desc-term">Revolution Time</dt>
+        <dd class="desc-details"><?php echo esc_html(get_field('revolution_time')); ?></dd>
+      </div>
+      <div>
+        <dt class="desc-term">Radius</dt>
+        <dd class="desc-details"><?php echo esc_html(get_field('radius')); ?></dd>
+      </div>
+      <div>
+        <dt class="desc-term">Average Temp.</dt>
+        <dd class="desc-details"><?php echo esc_html(get_field('temperature')); ?></dd>
+      </div>
+    </dl>
   </section>
 
   <?php endwhile; endif; ?>
