@@ -24,6 +24,7 @@
 .desc-term {
   font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: .73px;
   line-height: 1;
   margin-top: 6px;
   color: hsla(0, 0%, 100%, .5)
@@ -34,4 +35,44 @@
   font-size: 20px;
   letter-spacing: -.75px;
   text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .planet-metrics {
+    dl {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    div {
+      flex: auto;
+      flex-direction: column;
+      align-items: start;
+      gap: .4rem;
+      padding: .75rem .85rem;
+    }
+  } 
+
+  .desc-details {
+    font-size: 24px;
+    letter-spacing: -.9px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .planet-metrics {
+    div {
+      padding: 1.25rem 1.5rem;
+    }
+  } 
+
+  .desc-term {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .desc-details {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
 }
