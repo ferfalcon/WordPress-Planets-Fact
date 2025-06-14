@@ -1,6 +1,7 @@
 # WordPress core
 /wp-admin/
 /wp-includes/
+wp-content/index.php
 index.php
 license.txt
 readme.html
@@ -30,6 +31,7 @@ wp-content/uploads/
 # Ignore all other themes
 wp-content/themes/*
 !wp-content/themes/planets/
+!wp-content/themes/planets/index.php
 
 # Ignore all plugins
 wp-content/plugins/*
