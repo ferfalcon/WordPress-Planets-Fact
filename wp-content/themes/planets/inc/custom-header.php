@@ -18,10 +18,10 @@
  */
 function planets_custom_header_setup() {
 	add_theme_support(
-		'custom-header',
-		apply_filters(
-			'planets_custom_header_args',
-			array(
+    'custom-header',
+    apply_filters(
+      'planets_custom_header_args',
+      array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
@@ -54,17 +54,15 @@ if ( ! function_exists( 'planets_header_style' ) ) :
 		// If we get this far, we have custom styles. Let's do this.
 		?>
 		<style type="text/css">
-		<?php
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :
+      <?php // Has the text been hidden?
+		    if ( ! display_header_text() ) :
 			?>
-			.site-title,
-			.site-description {
-				position: absolute;
-				clip: rect(1px, 1px, 1px, 1px);
-				}
-			<?php
-			// If the user has set a custom color for the text use that.
+        .site-title,
+        .site-description {
+          position: absolute;
+          clip: rect(1px, 1px, 1px, 1px);
+        }
+			<?php // If the user has set a custom color for the text use that.
 		else :
 			?>
 			.site-title a,

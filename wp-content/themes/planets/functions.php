@@ -137,10 +137,18 @@ add_action( 'widgets_init', 'planets_widgets_init' );
  */
 function planets_scripts() {
   // Main theme stylesheet
-	wp_enqueue_style( 'planets-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'planets-style', get_stylesheet_uri(), [], _S_VERSION );
 	wp_style_add_data( 'planets-style', 'rtl', 'replace' );
 
-  // Google Fonts
+  // Main styles
+  wp_enqueue_style(
+    'planets-main',
+    get_template_directory_uri() . '/assets/css/main.css',
+    [],
+    null
+  );
+
+  // Google Fonts stylesheet
   wp_enqueue_style(
     'planets-fonts',
     'https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=League+Spartan:wght@400;700&display=swap',
@@ -185,3 +193,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 // Register custom post type: Planet
 require get_template_directory() . '/inc/custom-post-types.php';
+
